@@ -73,6 +73,51 @@ class Student:
         Detail_Frame = Frame(self.root,bd=4,relief=RIDGE,bg="pink")
         Detail_Frame.place(x=500,y=100,width=800,height=590)
 
+        lbl_search= Label(Detail_Frame,text="Search By",font=("Arial",15,"bold"),bg="pink")
+        lbl_search.grid(row=0,column=0,pady=10,padx=20,sticky="w")
+
+        combo_search= ttk.Combobox(Detail_Frame,width= 10,font=("Arial",15,"bold"),state="readonly")
+        combo_search['values']=("Roll","Name","Contact")
+        combo_search.grid(row=0,column=1,padx=20,pady=10)
+
+        txt_search= Entry(Detail_Frame,width=15,font=("Arial",15,"bold"),bg="pink")
+        txt_search.grid(row=0,column=2,pady=10,padx=20,sticky="w")
+
+        search_btn= Button(Detail_Frame,text="Search",width=10,pady=5).grid(row=0,column=3,padx=10,pady=10)
+        showall_btn= Button(Detail_Frame,text="Show All",width=10).grid(row=0,column=4,padx=10,pady=10)
+    
+    #========Table_Frame========
+        table_Frame=Frame(Detail_Frame,bd=4,relief=RIDGE,bg="pink")
+        table_Frame.place(x=15,y=70,width=760,height=450)
+
+        scroll_x= Scrollbar(table_Frame,orient=HORIZONTAL)
+        scroll_y= Scrollbar(table_Frame,orient=VERTICAL)
+        Student_table= ttk.Treeview(table_Frame,columns=("roll","name","email","gender","contact","dob","address"),xscrollcommand=scroll_x.set,yscrollcommand=scroll_y.set)
+        scroll_x.pack(side=BOTTOM,fill=X)
+        scroll_y.pack(side=RIGHT,fill=Y)
+        scroll_x.config(command=Student_table.xview)
+        scroll_y.config(command=Student_table.yview)
+
+        Student_table.heading("roll",text="Roll No.")
+        Student_table.heading("name",text="Name")
+        Student_table.heading("email",text="Email")
+        Student_table.heading("gender",text="Gender")
+        Student_table.heading("contact",text="Contact")
+        Student_table.heading("dob",text="D.O.B")
+        Student_table.heading("address",text="Address")
+
+        Student_table.column("roll",width=70)
+        Student_table.column("name",width=150)
+        Student_table.column("email",width=120)
+        Student_table.column("gender",width=80)
+        Student_table.column("contact",width=100)
+        Student_table.column("dob",width=100)
+        Student_table.column("address",width=150)
+
+        Student_table["show"]="headings"
+        Student_table.pack(fill=BOTH,expand=1)
+        
+
 if __name__ == "__main__":
     root=Tk()
     obj=Student(root)
