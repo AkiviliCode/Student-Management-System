@@ -8,7 +8,7 @@ The Student management system has been developed to eliminate the existing probl
 
 ## Project Requirements :
     1) MySql Installed with a user setup to access the database for the library 
->(CHANGE THE USERNAME AND PASSWORD IN THE ABOVE PROGRAMS TO YOUR USERNAME AND PASSWORD )
+   >(INSERT THE DATABSE DETAILS IN THE ABOVE PROGRAM BEFORE EXECUTION )
     
     2) Tkinter ( python module)
         pip install tk
