@@ -12,7 +12,8 @@ class Student:
     def __init__(self,root):
         self.root=root
         self.root.title("Student Management System")
-        self.root.geometry("1350x740+0+0")
+        self.root.geometry("1350x740+200+150")
+        self.root.resizable(False,False)
 
         title=Label(self.root, text= "Student Management System",font=("Arial",35,"bold"),bg="pink")
         title.pack(side=TOP,fill="x")
