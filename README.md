@@ -15,6 +15,9 @@ The Student management system has been developed to eliminate the existing probl
     
     3) Pymysql (python module)
         pip install pymysql 
+        
+     4) Pillow (python module)
+        pip install pillow
     
 ### For Windows machine 
 
@@ -24,6 +27,7 @@ For windows machine you'd need to download MySql from [MySql.org](https://www.my
 ## Modules required in this project 
 1) Tkinter ( For GUI setup)
 2) pymysql ( to access mysql server )
+3) Pillow (to process images )
 
 ## Development Tools 
 
@@ -56,5 +60,4 @@ For windows machine you'd need to download MySql from [MySql.org](https://www.my
     * view all staff members
     * Add/Remove/Update new staff members 
     * search for staff
-    * login for staff
 
