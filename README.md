@@ -52,6 +52,10 @@ For windows machine you'd need to download MySql from [MySql.org](https://www.my
         * Open Source and flexible
         * Easy to use and setup 
         * low maintainance
+        
+### How to Run
+    1)Run the SQL_queries.txt in sql shell(database name can be changed)
+    2)Run main.py
     
 
 ## Features of the program 
@@ -63,4 +67,5 @@ For windows machine you'd need to download MySql from [MySql.org](https://www.my
     * view all staff members
     * Add/Remove/Update new staff members 
     * search for staff
+    * class column and search by class feature 
 
