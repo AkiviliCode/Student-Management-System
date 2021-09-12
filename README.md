@@ -60,5 +60,4 @@ For windows machine you'd need to download MySql from [MySql.org](https://www.my
     * view all staff members
     * Add/Remove/Update new staff members 
     * search for staff
-    * login for staff
 
