@@ -1,12 +1,16 @@
 from tkinter import *
 from tkinter import ttk
 import pymysql
+import  tkinter.messagebox
+from PIL import ImageTk,Image
 
-#====Enter_database _details====
 db_name=""
 db_pass=""
 db_host=""
 db_user=""
+user = ''
+passw = ''
+
 
 class Student:
     def __init__(self,root):
@@ -232,7 +236,126 @@ class Student:
         con.close()
 
 
-if __name__ == "__main__":
-    root=Tk()
-    obj=Student(root)
+
+
+class Authentication:
+
+    def __init__(self,root):
+
+        self.root = root
+        self.root.title('USER AUTHENTICATION')
+        self.root.resizable(0,0)
+        self.root.geometry("350x500")
+
+    #======gradient_frame=======
+
+        j=0
+        r=10
+        for i in range(100):
+            c=str(222222+r)
+            Frame(root,width=10,height=500,bg="#"+c).place(x=j,y=0)   
+            j=j+10                                                  
+            r=r+1
+
+    #====main_frame======
+
+        frame1=Frame(root,width=250,height=400,bg='white')
+        frame1.place(x=50,y=50)
+
+        l1=Label(root,text='Username',bg='white')
+        l=('Consolas',13)
+        l1.config(font=l)
+        l1.place(x=80,y=200)
+
+        #e1 entry for username entry
+        e1=Entry(root,width=20,border=0)
+        l=('Consolas',13)
+        e1.config(font=l)
+        e1.place(x=80,y=230)
+
+        #e2 entry for password entry
+        e2=Entry(root,width=20,border=0,show='*')
+        e2.config(font=l)
+        e2.place(x=80,y=310)
+
+
+        l2=Label(root,text='Password',bg='white')
+        l=('Consolas',13)
+        l2.config(font=l)
+        l2.place(x=80,y=280)
+
+
+    #======frame_on_entry=======
+
+        Frame(root,width=180,height=2,bg='#141414').place(x=80,y=332)
+        Frame(root,width=180,height=2,bg='#141414').place(x=80,y=252)
+
+        
+    #=========open_img=============
+        
+        imagea=Image.open("log.png")
+        self.imageb= ImageTk.PhotoImage(imagea)
+
+        label1 = Label(root,image=self.imageb,
+                    border=0,
+                    justify=CENTER)
+
+
+        label1.place(x=115, y=50)
+       
+
+    #=========Command==============
+        def cmd():
+            if e1.get()== user and e2.get()==passw :
+                msg1= tkinter.messagebox.showinfo("LOGIN SUCCESSFULLY", f"         WELCOME  {user}       ")
+    
+                #Destroy current window
+                root.destroy()
+                
+                #Open new window
+                newroot = Tk()
+                application = Student(newroot)
+                newroot.mainloop()
+                
+            else:
+                ms2 = tkinter.messagebox.showwarning("LOGIN FAILED","        PLEASE TRY AGAIN        ")
+
+
+    #===Button_with_hover_effect===
+
+        def bttn(x,y,text,ecolor,lcolor):
+            def on_entera(e):
+                myButton1['background'] = ecolor #ffcc66
+                myButton1['foreground']= lcolor  #000d33
+
+            def on_leavea(e):
+                myButton1['background'] = lcolor
+                myButton1['foreground']= ecolor
+
+            myButton1 = Button(root,text=text,
+                        width=20,
+                        height=2,
+                        fg=ecolor,
+                        border=0,
+                        bg=lcolor,
+                        activeforeground=lcolor,
+                        activebackground=ecolor,
+                            command=cmd)
+                  
+            myButton1.bind("<Enter>", on_entera)
+            myButton1.bind("<Leave>", on_leavea)
+
+            myButton1.place(x=x,y=y)
+
+
+        bttn(100,375,'L O G I N','white','#994422')
+
+
+
+if __name__ == '__main__':
+
+    root = Tk()
+    root.geometry('425x185+700+300')
+    application = Authentication(root)
+
     root.mainloop()
