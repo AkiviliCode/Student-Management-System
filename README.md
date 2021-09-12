@@ -3,7 +3,7 @@
 ## Python Project to create a Student Management System using MySql 
 
 ## Introduction 
-The Student management system has been developed to eliminate the existing problems in manually handling the official work of recording and updating the records of existing students and staff in a school. The sofware is expected to eliminate the current problems of the system and increase work efficiency using a easy to use GUI interafce and easy controls.
+The Student management system has been developed to eliminate the existing problems in manually handling the official work of recording and updating the records of students and staff in a school. The sofware is expected to eliminate the current problems of the system and increase work efficiency using a easy to use GUI interafce and easy controls.
 
 
 ## Project Requirements :
@@ -23,6 +23,9 @@ The Student management system has been developed to eliminate the existing probl
 
 For windows machine you'd need to download MySql from [MySql.org](https://www.mysql.com/downloads/ "MySql Download")
 
+## Screenshot
+![LOGIN](https://user-images.githubusercontent.com/51025635/132988960-8fda1c9d-5bf3-49b3-9a04-818fc7b7dcb9.JPG)
+![Main](https://user-images.githubusercontent.com/51025635/132988965-09784921-ff0e-4754-b1f4-b76f5fe16b51.jpg)
 
 ## Modules required in this project 
 1) Tkinter ( For GUI setup)
