@@ -25,7 +25,8 @@ For windows machine you'd need to download MySql from [MySql.org](https://www.my
 
 ## Screenshot
 ![LOGIN](https://user-images.githubusercontent.com/51025635/132988960-8fda1c9d-5bf3-49b3-9a04-818fc7b7dcb9.JPG)
-![Main](https://user-images.githubusercontent.com/51025635/132988965-09784921-ff0e-4754-b1f4-b76f5fe16b51.jpg)
+![Main]![pics](https://user-images.githubusercontent.com/51025635/139799472-135449a7-7dd6-46a8-aaa9-70daa71877dc.JPG)
+
 
 ## Modules required in this project 
 1) Tkinter ( For GUI setup)
