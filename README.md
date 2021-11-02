@@ -64,9 +64,4 @@ For windows machine you'd need to download MySql from [MySql.org](https://www.my
     * View all students
     * search for students using roll/name/contact
 
-## to_be_added features
-    * view all staff members
-    * Add/Remove/Update new staff members 
-    * search for staff
-    * class column and search by class feature 
 
