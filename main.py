@@ -1,16 +1,43 @@
+import subprocess
+import sys
+
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+install('pymysql')
+install('pillow')
+
 from tkinter import *
 from tkinter import ttk
 import pymysql
 import  tkinter.messagebox
 from PIL import ImageTk,Image
 
+db_name='testbase1'
+db_host=input("Enter host : ")
+db_user=input("Enter user : ")
+db_pass=input("Enter password : ")
 
-db_name=""
-db_pass=""
-db_host=""
-db_user=""
-user = ''
-passw = ''
+user = input('login user : ')
+passw = input('login password : ')
+
+
+
+
+con=pymysql.connect(host=db_host,user=db_user,password=db_pass)
+cur1=con.cursor()
+cur1.execute(f"create database if not exists testbase1;")
+cur1.execute(f'''create table if not exists {db_name}.students(
+                `roll_no` varchar(45) NOT NULL,
+                `name` VARCHAR(45) NOT NULL,
+                `email` VARCHAR(45) NOT NULL,
+                `gender` VARCHAR(10) NOT NULL,
+                `contact` varchar(15) NOT NULL,
+                `dob` varchar(15) NOT NULL,
+                `address` VARCHAR(45) NOT NULL); ''')
+
+con.commit()
+con.close()
 
 
 class Student:
@@ -293,7 +320,7 @@ class Authentication:
 
         
     #=========open_img=============
-        
+     
         imagea=Image.open("log.png")
         self.imageb= ImageTk.PhotoImage(imagea)
 
